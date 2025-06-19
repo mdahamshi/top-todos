@@ -1,0 +1,3 @@
+[submodule "src/sb-utils"]
+	path = src/sb-utils
+	url = git@github.com:mdahamshi/sb-utils.git
