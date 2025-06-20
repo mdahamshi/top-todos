@@ -1,48 +1,20 @@
-export default function() {
+export default function(){
 
-    const menuSection = document.createElement('div');
-    menuSection.classList.add('flex-col', 'menu-section');
+    let ce = (tag) => document.createElement(tag);
+    const hero = ce('div');
+    hero.classList.add('flex-col', 'hero-section');
 
-    const title = document.createElement('h1');
-    title.textContent = 'Our Menu';
+    const h1 = ce('h1');
+    h1.textContent = "SaraFood Restaurant – Where Flavor Feels Like Home";
 
-    const items = [
-        { name: 'Grilled Chicken Shawarma', description: 'Served with tahini and fresh pita', price: '$9.99' },
-        { name: 'Falafel Plate', description: 'Crispy falafel with hummus and salad', price: '$7.49' },
-        { name: 'Stuffed Grape Leaves', description: 'Filled with rice, herbs, and lemon', price: '$6.25' },
-    ];
+    const p = ce('p');
+    p.textContent = "Welcome to SaraFood, a warm and inviting restaurant that blends traditional flavors with a modern twist. Whether you're stopping by for a hearty lunch, a cozy dinner, or a quick bite on the go, SaraFood serves up fresh, homemade meals made with love and quality ingredients.";
 
-    const ul = document.createElement('ul');
-    ul.classList.add('menu-list', 'flex-col');
+    const button = ce('button')
+    button.textContent = "Order Now";
+    button.classList.add('sb-button');
 
-    items.forEach(item => {
-        const li = document.createElement('li');
-        li.classList.add('menu-item','flex-col', 'sb-shadow');
+    hero.append(h1, p, button);
 
-        const itemName = document.createElement('h3');
-        itemName.textContent = item.name;
-
-        const itemDesc = document.createElement('p');
-        itemDesc.textContent = item.description;
-
-        const itemPrice = document.createElement('span');
-        itemPrice.textContent = item.price;
-
-        const addtcart = document.createElement('button');
-        addtcart.textContent = 'Add To Cart';
-        addtcart.classList.add('sb-button');
-
-        const actionbar = document.createElement('div');
-        actionbar.classList.add('flex-row' ,'menu-item-action');
-
-        actionbar.append(itemPrice, addtcart);
-
-
-
-        li.append(itemName, itemDesc, actionbar);
-        ul.appendChild(li);
-    });
-
-    menuSection.append(title, ul);
-    return menuSection;
-}
+    return hero;
+};

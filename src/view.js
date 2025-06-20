@@ -6,14 +6,16 @@ import {sb_utils as sb} from "./sb-utils/utils.js";
 
 class View {
 
-    constructor(){
+    constructor(appName){
         this.content = document.getElementById('content');
         this.navLinks = document.querySelector('.nav-links');
         this.initPages();
         this.content.innerHTML = '';
         this.content.appendChild(this.pages.home);
         this.addEvents();
-        sb.addCopyRight('SaraFood');
+        sb.addCopyRight(appName);
+        document.querySelector('title').textContent = appName;
+        document.getElementById('logo-name').textContent = appName;
 
     }
     initPages(){

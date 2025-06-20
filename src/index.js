@@ -1,10 +1,10 @@
 import "./styles.css";
-import logoImage from "../asset/food.svg";
+import logoImage from "../asset/logo.svg";
 
 
 import {View} from './view.js';
 
-new View();
+new View('SalmaToDo');
 
 const logo = document.querySelector('#nav-logo');
 logo.src = logoImage;

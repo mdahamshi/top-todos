@@ -8,13 +8,13 @@
 
 }
 :root {
-    --lite-gray: #D6D9Dc;
+    --lite-gray: #f0f1f4;
     --label-width: 120px;
-    --sb-theme-color: #e85b30;
+    --sb-theme-color: #3080e8;
     --sb-conent-bg: #fcf9f8;
     --sb-corner-radius: 12px;
     --sb-padding: 16px;
-    --sb-border-color-thin: #f3eae7;
+    --sb-border-color-thin: #f0f1f4;
 }
 .sb-animate , #content { 
     animation-duration: 0.5s;
@@ -30,7 +30,6 @@
 html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  width: 100vw;
     background-color: var(--sb-conent-bg);
   
 }
@@ -65,7 +64,7 @@ ul {
 }
 .logo img {
   position: relative;
-  bottom: 4px;
+  bottom: 1px;
 }
 nav.flex-row {
   justify-content: space-between;
@@ -73,8 +72,10 @@ nav.flex-row {
   border-bottom: 1px solid var(--sb-border-color-thin);
 }
 button:hover {
-    opacity: 0.6;
+    filter: brightness(1.1);
     cursor: pointer;
+    transform: scale(1.03);
+    transition: all 0.3s ease;
 }
 button:focus-visible, button:focus {
     outline: none;
@@ -85,7 +86,7 @@ button {
 button.sb-button {
   border-radius: var(--sb-corner-radius);
   color: white;
-  background-color: #e85b30;
+  background-color: var(--sb-theme-color);
   padding: 10px;
   outline: none;
   font-weight: bold;
@@ -99,15 +100,20 @@ header nav button {
 
 }
 body {
-  height: 100dvh;
+  /* height: 100dvh; */
   display: flex;
   flex-direction: column;
-  width: 100dvw;
+  min-height: 100dvh;
 }
+
 #content {
-  padding: var(--sb-padding);
-  flex: 1;
-  width: 100%;
+    display: grid;
+    list-style-type: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    overflow-y: auto;
 }
 
 .hero-section {
@@ -161,4 +167,15 @@ footer {
     flex-direction: row;
 
   }
+}
+
+
+.button-icon {
+    width: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.button-icon:hover {
+    fill: var(--sb-theme-color);
 }

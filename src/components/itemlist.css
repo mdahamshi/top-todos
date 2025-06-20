@@ -1,0 +1,14 @@
+ul.todo-list :last-child {
+
+    border: none;
+}
+ul.todo-list {
+    display: flex;
+    flex-direction: column;
+    /* gap: 16px; */
+}
+.todo-list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
