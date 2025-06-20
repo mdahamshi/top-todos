@@ -16,7 +16,7 @@ export default function(list) {
     )
     
     const expand = new ElementBuilder('button')
-        .addClass('todo-list-expand','expand-action', 'button-icon')
+        .addClass('todo-list-expand', 'button-icon')
         .setAttr('action', list.id)
         .build();
 
@@ -33,6 +33,10 @@ export default function(list) {
         body.append(element);
     });
 
+    head.addEventListener('click', e => {
+        e.preventDefault();
+        body.classList.toggle('collapsed');
+    });
     ul.append(head, body);
 
     return ul;

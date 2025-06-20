@@ -141,9 +141,7 @@ body {
 
 footer {
   padding: var(--sb-padding);
-  width: 100%;
-  bottom: 0px;
-  position: fixed;
+  margin-top: auto;
 }
 
   .nav-links {

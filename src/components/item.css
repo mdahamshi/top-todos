@@ -62,3 +62,13 @@ h3.todo-title {
     gap: 20px;
     justify-content: flex-end;
 }
+.todo-item.priority-high .todo-item-left span svg {
+    fill: red;
+}
+
+.todo-item.priority-medium .todo-item-left span svg {
+    fill: orange;
+}
+.todo-item.priority-low .todo-item-left span svg {
+    fill: green;
+}

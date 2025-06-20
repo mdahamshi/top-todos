@@ -45,6 +45,7 @@ class View {
         const expand = document.querySelectorAll('button.expand-action');
         expand.forEach(button => {
             button.addEventListener('click', e => {
+                e.preventDefault();
                 let id = e.target.closest('button').getAttribute('action');
                 let list_body = document.querySelector(`#${id} .collapsible`);
                 list_body.classList.toggle('collapsed');
