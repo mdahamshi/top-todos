@@ -29,7 +29,7 @@ class View {
         let c = this.content;
         c.replaceChild(newContent, c.firstChild);
     }
-    actions = ['home', 'about', 'menu'];
+    actions = ['home', 'about'];
     addEvents(){
         const buttons = document.querySelectorAll('.flex-row button');
         buttons.forEach(button => {
@@ -40,6 +40,15 @@ class View {
                     this.navLinks.classList.remove('active');
                 }
             });
+        });
+
+        const expand = document.querySelectorAll('button.expand-action');
+        expand.forEach(button => {
+            button.addEventListener('click', e => {
+                let id = e.target.closest('button').getAttribute('action');
+                let list_body = document.querySelector(`#${id} .collapsible`);
+                list_body.classList.toggle('collapsed');
+            })
         });
 
         document.querySelector('.menu-toggle').addEventListener('click', () => {

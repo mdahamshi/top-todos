@@ -4,7 +4,8 @@ import TodoApp from '../model.js'
 import {tododata} from '../sample.js'
 export default function() {
     
-    const menuSection = document.createElement('div');
+    const todolists = document.createElement('div');
+    todolists.classList.add('todo-list-group', 'flex-col');
 
     let app = new TodoApp(tododata);
     const it = Item(app.getItemAll()[0]);
@@ -13,7 +14,7 @@ export default function() {
 
     app.getTodoLists().forEach(element => {
         let list = new ItemList(element);
-        menuSection.append(list);
+        todolists.append(list);
     });
 
     document.todoApp = app;
@@ -21,5 +22,5 @@ export default function() {
 
 
  
-    return menuSection;
+    return todolists;
 }
