@@ -16,7 +16,14 @@ class View {
         sb.addCopyRight(appName);
         document.querySelector('title').textContent = appName;
         document.getElementById('logo-name').textContent = appName;
+        this.colorize();
 
+    }
+    colorize(){
+        document.documentElement.style.setProperty(
+        "--sb-theme-color",
+        sb.getRandomColor(true)
+        );
     }
     initPages(){
         this.pages.home = home();
