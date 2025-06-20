@@ -5,6 +5,10 @@ ul.todo-list :last-child {
 ul.todo-list {
     display: flex;
     flex-direction: column;
+    padding: 16px 8px;
+    padding-right: 16px;
+    border-left: 8px solid var(--sb-theme-color);
+
     /* gap: 16px; */
 }
 .todo-list-header {

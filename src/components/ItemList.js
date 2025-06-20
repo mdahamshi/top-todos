@@ -5,7 +5,7 @@ export default function(list) {
 
     const ul = new ElementBuilder('ul')
         .setId(list.id)
-        .addClass('todo-list')
+        .addClass('todo-list', 'sb-shadow')
         .build();
     const head = new ElementBuilder('div')
         .addClass('todo-list-header')

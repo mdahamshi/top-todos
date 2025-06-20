@@ -177,6 +177,7 @@ footer {
     cursor: pointer;
     background-color: transparent;
     border: none;
+    fill: var(--sb-theme-color);
 }
 .button-icon:hover {
     fill: var(--sb-theme-color);
