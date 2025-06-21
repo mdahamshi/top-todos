@@ -82,6 +82,21 @@ class View {
         }
     }
 
+    bindDoneTodo(handler) {
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.done-todo');
+            if (!btn) return;
+
+            const id = btn.getAttribute('data-id');
+
+            handler(id);
+        });
+    }
+    toggleItemDone(id) {
+        const li = document.querySelector(`li.todo-item[id="${id}"]`);
+        li?.classList.toggle('done');
+    }
+
 }
 
 

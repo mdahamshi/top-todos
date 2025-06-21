@@ -72,3 +72,9 @@ h3.todo-title {
 .todo-item.priority-low .todo-item-left span svg {
     fill: green;
 }
+
+.todo-item.done {
+  opacity: 0.5;
+  filter: grayscale(1);
+  text-decoration: line-through;
+}

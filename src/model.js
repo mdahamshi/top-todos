@@ -20,22 +20,25 @@ export  class ToDoApp {
             list => new TodoList(list)
         );
     }
-    loadData(){
 
-    }
     getTodoLists(){
         return this.data;
     }
     getItemByID(id){
         return this.getItemAll().filter(
             item => item.id === id
-        );
+        )[0];
     }
     removeItem(id){
         this.data.forEach(list => {
             list.removeItem(id);
         });
         this.storage.saveData(this.data);
+    }
+
+    toggleItemDone(id){
+        this.getItemByID(id)
+        .toggleState();
     }
     getItemAll(){
         return this.data.reduce(

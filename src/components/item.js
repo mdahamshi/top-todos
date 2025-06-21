@@ -52,23 +52,23 @@ export default function(item) {
         .build();
     
     const done = new ElementBuilder('button')
-        .addClass( 'button-icon', 'clickable')
+        .addClass( 'button-icon', 'clickable', 'done-todo')
+        .setAttr('data-id', item.id)
         .build();
     done.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check</title><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>`;
 
 
-
     const del = new ElementBuilder('button')
-        .addClass( 'button-icon', 'clickable')
+        .addClass( 'button-icon', 'clickable', 'delete-todo')
+        .setAttr('data-id', item.id)
         .build();
     del.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete-circle</title><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z" /></svg>`;
 
-    del.setAttribute('data-id', item.id);
-    del.classList.add('delete-todo');
 
 
     const edit = new ElementBuilder('button')
-        .addClass( 'button-icon', 'clickable')
+        .addClass( 'button-icon', 'clickable', 'edit-todo')
+        .setAttr('data-id', item.id)
         .build();
     edit.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>file-edit-outline</title><path d="M10 20H6V4H13V9H18V12.1L20 10.1V8L14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20M20.2 13C20.3 13 20.5 13.1 20.6 13.2L21.9 14.5C22.1 14.7 22.1 15.1 21.9 15.3L20.9 16.3L18.8 14.2L19.8 13.2C19.9 13.1 20 13 20.2 13M20.2 16.9L14.1 23H12V20.9L18.1 14.8L20.2 16.9Z" /></svg>`;
 
