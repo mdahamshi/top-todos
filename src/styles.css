@@ -146,12 +146,12 @@ footer {
 .nav-links button {
   background-color: transparent;
 }
-button:active {
+button:active , .clickable:active, .clickable svg:active {
   filter: brightness(0.9);
     transform: scale(0.98);
 
 }
-button, a , .clickable{
+button, a , .clickable, .clickable svg {
   -webkit-tap-highlight-color: transparent;
   transition: filter 0.15s ease;
   outline: none;
