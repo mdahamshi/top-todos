@@ -6,10 +6,10 @@ import {sb_utils as sb} from "./sb-utils/utils.js";
 
 class View {
 
-    constructor(appName){
+    constructor(appName, lists){
         this.content = document.getElementById('content');
         this.navLinks = document.querySelector('.nav-links');
-        this.initPages();
+        this.initPages(lists);
         this.content.innerHTML = '';
         this.content.appendChild(this.pages.home);
         this.addEvents();
@@ -25,8 +25,8 @@ class View {
         sb.getRandomColor(true)
         );
     }
-    initPages(){
-        this.pages.home = home();
+    initPages(lists){
+        this.pages.home = home(lists);
         this.pages.menu = menu();
         this.pages.about = about();
     }
@@ -64,6 +64,24 @@ class View {
         });
 
     }
+    bindDeleteTodo(handler) {
+    document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.delete-todo');
+            if (!btn) return;
+
+            const id = btn.getAttribute('data-id');
+            handler(id);
+        });
+    }
+
+    removeTodoItem(id) {
+        const li = document.querySelector(`li.todo-item[id="${id}"]`);
+        if (li) {
+            li.classList.add('fade-out');
+            setTimeout(() => li.remove(), 300);
+        }
+    }
+
 }
 
 

@@ -56,10 +56,16 @@ export default function(item) {
         .build();
     done.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check</title><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>`;
 
+
+
     const del = new ElementBuilder('button')
         .addClass( 'button-icon')
         .build();
     del.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete-circle</title><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z" /></svg>`;
+
+    del.setAttribute('data-id', item.id);
+    del.classList.add('delete-todo');
+
 
     const edit = new ElementBuilder('button')
         .addClass( 'button-icon')

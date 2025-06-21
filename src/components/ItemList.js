@@ -8,7 +8,7 @@ export default function(list) {
         .addClass('todo-list', 'sb-shadow')
         .build();
     const head = new ElementBuilder('div')
-        .addClass('todo-list-header')
+        .addClass('todo-list-header', 'clickable')
         .build();
     head.append(
         new ElementBuilder('h2')

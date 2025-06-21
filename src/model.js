@@ -3,7 +3,7 @@ import Todo from './classes/Todo.js';
 
 import {StorageManager} from './classes/StorageManager.js'
 
-export default class ToDoApp {
+export  class ToDoApp {
     constructor(todoArr){
 
         this.storage = new StorageManager(this.appName);

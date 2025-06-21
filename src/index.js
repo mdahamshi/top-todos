@@ -4,8 +4,17 @@ import userImage from "../asset/woman.png";
 
 
 import {View} from './view.js';
+import {ToDoApp} from './model.js';
+import {Controller} from './controller.js';
+import {tododata} from './sample.js'
 
-new View('SalmaToDo');
+
+
+const app = new ToDoApp(tododata);  // Model
+const view = new View('SalmaToDo', app.getTodoLists()); // View
+const controller = new Controller(app, view); // Connects both
+
+
 
 const logo = document.querySelector('#nav-logo');
 logo.src = logoImage;
