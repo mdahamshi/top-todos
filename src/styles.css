@@ -143,7 +143,9 @@ footer {
   padding: var(--sb-padding);
   margin-top: auto;
 }
-
+.nav-links button {
+  background-color: transparent;
+}
   .nav-links {
     display: none;
     flex-direction: column;
