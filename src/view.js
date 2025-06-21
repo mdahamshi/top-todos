@@ -18,6 +18,7 @@ class View {
         document.getElementById('logo-name').textContent = appName;
         this.colorize();
 
+
     }
     colorize(){
         document.documentElement.style.setProperty(
@@ -95,7 +96,15 @@ class View {
     toggleItemDone(id) {
         const li = document.querySelector(`li.todo-item[id="${id}"]`);
         li?.classList.toggle('done');
+        let list_body = document.querySelector(`#${id} .collapsible`);
+        list_body.classList.toggle('collapsed');
     }
+
+    getAllItems(){
+        return document.querySelectorAll('li.todo-item');
+    }
+
+
 
 }
 

@@ -1,0 +1,14 @@
+.swipeable-item {
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.swipeable-item.swipe-exit-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.swipeable-item.swipe-exit-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}

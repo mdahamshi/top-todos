@@ -6,8 +6,9 @@ export default function(item) {
 
     const li = new ElementBuilder('li')
         .setId(item.id)
-        .addClass('todo-item', `priority-${item.priority}`)
+        .addClass('todo-item','swipeable-item', `priority-${item.priority}`)
         .build();
+    
 
     const leftside = new ElementBuilder('div')
         .addClass('todo-item-left')
@@ -87,6 +88,7 @@ export default function(item) {
 
     li.append(summary, details);
 
+   
 
     return li;
 }
