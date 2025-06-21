@@ -146,6 +146,15 @@ footer {
 .nav-links button {
   background-color: transparent;
 }
+button:active {
+  filter: brightness(0.9);
+}
+button, a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  touch-action: manipulation; /* prevents 300ms delay on older browsers */
+}
+
   .nav-links {
     display: none;
     flex-direction: column;
