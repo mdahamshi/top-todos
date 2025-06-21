@@ -1,5 +1,18 @@
-# sb-base-webpack
+# SalmaToDo
+SalmaToDo Project, [TOP project](https://www.theodinproject.com/lessons/node-path-javascript-todo-list)
 
-Template repo that have basic web app with webpack configuration
+I used MVC with pure javascript.
 
-It have a basic website with 3 tabs loaded inplace without page reload
+FontAwsome for icons
+
+Mobile first design
+
+[Code at GitHub](https://github.com/mdahamshi/top-todos)
+
+[Live DEMO](https://mdahamshi.github.io/top-todos)
+
+![screenshot](./sc.png)
+
+![screenshot](./sc2.png)
+
+
