@@ -31,7 +31,6 @@ export class SwipeHandler {
       swiping = true;
       startX = e.touches ? e.touches[0].clientX : e.clientX;
       this.el.style.transition = "none";
-
       this._hideBoth(); // Reset indicators at start
     };
 
@@ -39,7 +38,6 @@ export class SwipeHandler {
       if (!swiping) return;
       currentX = e.touches ? e.touches[0].clientX : e.clientX;
       const diffX = currentX - startX;
-
       this.el.style.transform = `translateX(${diffX}px)`;
 
       if (diffX > 10) {
@@ -51,11 +49,13 @@ export class SwipeHandler {
       }
     };
 
-    const handleEnd = () => {
+    const handleEnd = (e) => {
+    if (!swiping) return;
       swiping = false;
+      currentX = e.touches ? e.touches[0].clientX : e.clientX;
+
       const diffX = currentX - startX;
       this.el.style.transition = "transform 0.3s ease";
-
       this._hideBoth(); // Always hide after swipe
 
       if (diffX > this.threshold) {

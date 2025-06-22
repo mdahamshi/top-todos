@@ -9,6 +9,9 @@ export default function(item) {
         .addClass('todo-item','swipe-item', `priority-${item.priority}`)
         .build();
     
+    const head = new ElementBuilder('div')
+        .addClass('todo-header', 'clickable')
+        .build();
 
     const leftside = new ElementBuilder('div')
         .addClass('todo-item-left')
@@ -37,6 +40,7 @@ export default function(item) {
     .build();
     rightSide.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>open-in-new</title><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg>`;
 
+    head.append(leftside, rightSide);
 
     const details = new ElementBuilder('div')
         .addClass('todo-item-details', 'collapsible', 'collapsed')
@@ -77,16 +81,16 @@ export default function(item) {
 
     details.append(toolbar);
 
-    const summary = new ElementBuilder('div')
-        .addClass('todo-item-summary')
-        .build(); 
-    
-
-    summary.append(leftside, rightSide);
 
 
 
-    li.append(summary, details);
+    rightSide.addEventListener('click', e => {
+        e.preventDefault();
+        details.classList.toggle('collapsed');
+    });
+
+
+    li.append(head, details);
 
    
 

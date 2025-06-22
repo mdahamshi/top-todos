@@ -101,6 +101,7 @@ header nav button {
 }
 header {
   background-color: white;
+  border-radius: none;
 }
 body {
   /* height: 100dvh; */

@@ -50,15 +50,7 @@ class View {
             });
         });
 
-        const expand = document.querySelectorAll('button.expand-action');
-        expand.forEach(button => {
-            button.addEventListener('click', e => {
-                e.preventDefault();
-                let id = e.target.closest('button').getAttribute('action');
-                let list_body = document.querySelector(`#${id} .collapsible`);
-                list_body.classList.toggle('collapsed');
-            })
-        });
+
 
         document.querySelector('.menu-toggle').addEventListener('click', () => {
             this.navLinks.classList.toggle('active');
@@ -85,6 +77,7 @@ class View {
 
     bindDoneTodo(handler) {
         document.addEventListener('click', (e) => {
+            e.preventDefault();
             const btn = e.target.closest('.done-todo');
             if (!btn) return;
 
