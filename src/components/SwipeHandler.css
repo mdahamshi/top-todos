@@ -1,14 +1,47 @@
-.swipeable-item {
+.swipe-item {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    will-change: transform;
 }
 
-.swipeable-item.swipe-exit-right {
-    transform: translateX(100%);
+/* Container backgrounds */
+.swipe-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 0;
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    color: white;
+    font-size: 24px;
 }
 
-.swipeable-item.swipe-exit-left {
-    transform: translateX(-100%);
-    opacity: 0;
+/* Visible state */
+.swipe-bg.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Red delete (shown when swiping right) */
+.bg-right {
+    background-color: #d93025; /* Gmail red */
+    justify-content: flex-start;
+    left: 0;
+}
+
+/* Green archive (shown when swiping left) */
+.bg-left {
+    background-color: #188038; /* Gmail green */
+    justify-content: flex-end;
+    right: 0;
 }

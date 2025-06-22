@@ -25,7 +25,7 @@ export default function(list) {
 
 
     const body = new ElementBuilder('div')
-        .addClass('todo-list-body', 'collapsed', 'collapsible')
+        .addClass('todo-list-body', 'collapsible')
         .build();
 
     list.data.forEach(item => {

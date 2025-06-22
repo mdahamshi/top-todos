@@ -6,7 +6,7 @@ export default function(item) {
 
     const li = new ElementBuilder('li')
         .setId(item.id)
-        .addClass('todo-item','swipeable-item', `priority-${item.priority}`)
+        .addClass('todo-item','swipe-item', `priority-${item.priority}`)
         .build();
     
 

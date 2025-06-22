@@ -23,15 +23,17 @@ export  class Controller {
         let items = this.view.getAllItems();
         items.forEach(item => {
             new SwipeHandler(item,
-                () => {
+                {
+                    onSwipeLeft: () => {
+                        let id = item.getAttribute('id');
+                        this.handleDoneTodo(id);
 
                 },
-                () => {
-                    let id = item.getAttribute('id');
-                    this.app.removeItem(id);
-                    item.remove();
-                }
-            );
+                onSwipeRight: () => {
+                        let id = item.getAttribute('id');
+                        this.handleDeleteTodo(id);
+                    }
+        });
         });
     }
 

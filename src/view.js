@@ -96,8 +96,8 @@ class View {
     toggleItemDone(id) {
         const li = document.querySelector(`li.todo-item[id="${id}"]`);
         li?.classList.toggle('done');
-        let list_body = document.querySelector(`#${id} .collapsible`);
-        list_body.classList.toggle('collapsed');
+        let todo_body = document.querySelector(`#${id} .collapsible`);
+        todo_body.classList.add('collapsed');
     }
 
     getAllItems(){
