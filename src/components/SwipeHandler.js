@@ -30,6 +30,8 @@ export class SwipeHandler {
     const handleStart = (e) => {
       swiping = true;
       startX = e.touches ? e.touches[0].clientX : e.clientX;
+      currentX = startX;
+
       this.el.style.transition = "none";
       this._hideBoth(); // Reset indicators at start
     };
@@ -51,8 +53,8 @@ export class SwipeHandler {
 
     const handleEnd = (e) => {
       swiping = false;
-
       const diffX = currentX - startX;
+
       this.el.style.transition = "transform 0.3s ease";
       this._hideBoth(); // Always hide after swipe
 
