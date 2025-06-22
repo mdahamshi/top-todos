@@ -50,7 +50,6 @@ export class SwipeHandler {
     };
 
     const handleEnd = (e) => {
-    if (!swiping) return;
       swiping = false;
       currentX = e.touches ? e.touches[0].clientX : e.clientX;
 
