@@ -10,7 +10,7 @@ export default function(item) {
         .build();
     
     const head = new ElementBuilder('div')
-        .addClass('todo-header', 'clickable')
+        .addClass('todo-header')
         .build();
 
     const leftside = new ElementBuilder('div')
