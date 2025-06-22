@@ -51,7 +51,6 @@ export class SwipeHandler {
 
     const handleEnd = (e) => {
       swiping = false;
-      currentX = e.touches ? e.touches[0].clientX : e.clientX;
 
       const diffX = currentX - startX;
       this.el.style.transition = "transform 0.3s ease";
