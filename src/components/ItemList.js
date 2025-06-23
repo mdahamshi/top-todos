@@ -1,44 +1,50 @@
-import './itemlist.css'
-import {ElementBuilder} from './ElementBuilder.js'
-import Item from './item.js'
-export default function(list) {
+import './itemlist.css';
+import { ElementBuilder } from './ElementBuilder.js';
+import Item from './item.js';
 
-    const ul = new ElementBuilder('ul')
+export default function createTodoList(list) {
+    const listEl = new ElementBuilder('ul')
         .setId(list.id)
         .addClass('todo-list', 'sb-shadow')
         .build();
-    const head = new ElementBuilder('div')
+
+    const headerEl = new ElementBuilder('div')
         .addClass('todo-list-header', 'clickable')
         .build();
-    head.append(
-        new ElementBuilder('h2')
-        .setText(list.title).build()
-    )
-    
-    const expand = new ElementBuilder('button')
+
+    const titleEl = new ElementBuilder('h2')
+        .setText(list.title)
+        .build();
+
+    const toggleButtonEl = new ElementBuilder('button')
         .addClass('todo-list-expand', 'button-icon')
         .setAttr('action', list.id)
         .build();
 
-    expand.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>triangle-down-outline</title><path d="M12 22L1 3H23M12 18L19.53 5H4.47" /></svg>`;
-    head.append(expand);
+    toggleButtonEl.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>Expand</title>
+            <path d="M12 22L1 3H23M12 18L19.53 5H4.47" />
+        </svg>
+    `;
 
+    headerEl.append(titleEl, toggleButtonEl);
 
-    const body = new ElementBuilder('div')
+    const bodyEl = new ElementBuilder('div')
         .addClass('todo-list-body', 'collapsible')
         .build();
 
-    list.data.forEach(item => {
-        let element = new Item(item);
-        body.append(element);
+    list.data.forEach(itemData => {
+        const itemEl = new Item(itemData);
+        bodyEl.append(itemEl);
     });
 
-    head.addEventListener('click', e => {
+    headerEl.addEventListener('click', e => {
         e.preventDefault();
-        body.classList.toggle('collapsed');
+        bodyEl.classList.toggle('collapsed');
+        headerEl.classList.toggle('expanded'); // optional: for rotating the arrow
     });
-    ul.append(head, body);
 
-    return ul;
-    
+    listEl.append(headerEl, bodyEl);
+    return listEl;
 }

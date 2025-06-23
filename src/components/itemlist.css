@@ -16,3 +16,10 @@ ul.todo-list {
     flex-direction: row;
     justify-content: space-between;
 }
+.todo-list-header .todo-list-expand svg {
+  transition: transform 0.3s ease;
+}
+
+.todo-list-header.expanded .todo-list-expand svg {
+  transform: rotate(-90deg);
+}
