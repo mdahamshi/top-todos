@@ -17,6 +17,9 @@ class View {
         document.querySelector('title').textContent = appName;
         document.getElementById('logo-name').textContent = appName;
         this.colorize();
+        this.edit_todo = document.getElementById('dialog-edit-todo');
+        this.edit_todo.showModal();
+
 
 
     }

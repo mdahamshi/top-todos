@@ -30,6 +30,30 @@
             </div>
         </nav>
     </header>
+
+          <dialog id="dialog-edit-todo" class="dialog-modal">
+            <div class="flex-col">
+                <button id="dialog-close" class="sb-button dialog-close" autofocus>X</button>
+                <h2>Edit</h2>
+                <form class="todo-form flex-col"  method="post">
+                    <div class="form-row">
+                        <label for="todo-title">Title</label>
+                        <input type="text" id="todo-title" name="todo-title">
+                    </div>  
+                    <div class="form-row">
+                        <label for="todo-desc">Description</label>
+                        <input type="text" id="todo-desc" name="todo-desc">
+                    </div>
+                    <div class="form-row">
+                        <label for="todo-due">Due</label>
+                        <input type="date" id="todo-due" name="todo-due">
+                    </div>
+                    <button class="sb-button" type="submit" id="button-add-todo">Add</button>
+                </form>
+
+            </div>
+        </dialog>
+            
         <div id="content" class="flex-col">
     
     
