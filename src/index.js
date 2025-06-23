@@ -1,6 +1,4 @@
 import "./styles.css";
-import './css/dialog-modal.css';
-import './css/form.css';
 import logoImage from "../asset/logo.svg";
 import userImage from "../asset/woman.png";
 

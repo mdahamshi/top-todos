@@ -1,14 +1,16 @@
 .dialog-close {
     align-self: flex-end;    
     padding: 10px;
-    border-radius: 50% !important;
+    position: absolute;
+    margin: 16px;
+    top: 0;
+    right: 0;
 }
 
 .dialog-modal{
     margin: auto;
     width: 100%;
-    height: 450px;
-    padding: 20px;
+    padding: 32px 20px;
     border-radius: 6px;
     border: none;
 }

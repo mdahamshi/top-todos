@@ -25,9 +25,17 @@ export  class ToDoApp {
         return this.data;
     }
     getItemByID(id){
-        return this.getItemAll().filter(
+        return this.getItemAll().find(
             item => item.id === id
-        )[0];
+        );
+    }
+    updateItem(newItem){
+        let item = this.getItemByID(newItem.id);
+        this.getTodoList(item.list).updateItem(newItem);
+        
+
+
+        this.storage.saveData(this.data);
     }
     removeItem(id){
         this.data.forEach(list => {
@@ -46,9 +54,9 @@ export  class ToDoApp {
         );
     }
     getTodoList(title){
-        return this.data.filter(
-            list => list.title.toLowerCase() == title.toLowerCase()
-        )[0];
+        return this.data.find(
+            list => list.title.toLowerCase() === title.toLowerCase()
+        );
     }
 
     addList({title, desc = '', data = [], icon = ''}){
@@ -61,7 +69,7 @@ export  class ToDoApp {
     addItem(listTitle, item){
         const list = this.getTodoList(listTitle);
         if (!list) return;
-
+        
         const todo = item instanceof Todo ? itemData : new Todo(item);
         list.addItem(todo);
         this.storage.saveData(this.data);

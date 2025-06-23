@@ -18,10 +18,40 @@ export  class Controller {
         this.app.toggleItemDone(id);
         this.view.toggleItemDone(id);
     }
+    foromInit(){
+        const forms = this.view.getForms();
+        const dialog = this.view.dialog;
+        let form = forms.todo_edit;
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const updatedTodo = {
+                id: form.querySelector('#form-todo-id').value,
+                title: form.querySelector('#todo-title').value.trim(),
+                desc: form.querySelector('#todo-desc').value.trim(),
+                due: form.querySelector('#todo-due').value,
+                priority: form.querySelector('#todo-priority').value
+            };
 
+            this.app.updateItem(updatedTodo);
+            this.view.updateItem(updatedTodo);
+            this.view.dialog.close();
+        });
+    }
     initEvents(){
+
+        this.foromInit();
         let items = this.view.getAllItems();
         items.forEach(item => {
+
+            const editbtn = item.querySelector('button.edit-todo');
+                editbtn.addEventListener('click', (e) => {
+                    let id = item.getAttribute('id');
+
+                    this.view.editTodoItem(this.app.getItemByID(id));
+                });
+            
+            
+
             new SwipeHandler(item,
                 {
                     onSwipeLeft: () => {
