@@ -76,7 +76,7 @@ h3.todo-title {
 }
 
 .todo-item.updated {    
-  animation: pulse 0.5s ease;
+  animation: pulse 0.9s ease;
 }
 
 @keyframes pulse {

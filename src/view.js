@@ -139,7 +139,7 @@ class View {
 
         li.querySelector('.todo-title').textContent = updatedItem.title;
         li.querySelector('.details-desc').textContent = updatedItem.desc;
-        li.querySelector('.todo-date').textContent = format(new Date(updatedItem.due), "yyyy-MM-dd");
+        li.querySelector('.todo-date').textContent = 'Due: ' + format(new Date(updatedItem.due), "dd/MM/yyyy");
         li.classList.remove('priority-low', 'priority-medium', 'priority-high');
         li.classList.add(`priority-${updatedItem.priority}`);
 
