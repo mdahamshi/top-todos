@@ -98,6 +98,14 @@ class View {
             this.navLinks.classList.toggle('active');
         });
 
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('button.btn-add-item');
+            if(! btn) return;
+            const id = btn.dataset.id;
+            this.addTodoItemForm(id);
+
+        });
+
     }
     bindDeleteTodo(handler) {
     document.addEventListener('click', (e) => {
@@ -133,6 +141,7 @@ class View {
         let formEl = this.forms.todo_add;
         this.replaceForm('todo_add');
         this.dialog.showModal();
+        console.log(id)
         formEl.querySelector('#form-todo-id').value = id;
     }
     addListForm(){

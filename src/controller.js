@@ -20,10 +20,10 @@ export  class Controller {
     }
     foromInit(){
         const forms = this.view.getForms();
-        const dialog = this.view.dialog;
-        let form = forms.todo_edit;
-        form.addEventListener('submit', (e) => {
+        const formedit = forms.todo_edit;
+        formedit.addEventListener('submit', (e) => {
             e.preventDefault();
+            const form = formedit;
             const updatedTodo = {
                 id: form.querySelector('#form-todo-id').value,
                 title: form.querySelector('#todo-title').value.trim(),
@@ -37,10 +37,11 @@ export  class Controller {
             this.view.dialog.close();
         });
 
-        form = forms.todo_add;
+        const formadd = forms.todo_add;
 
-        form.addEventListener('submit', (e) => {
+        formadd.addEventListener('submit', (e) => {
             e.preventDefault();
+            const form = formadd;
             const newItem = {
                 listid: form.querySelector('#form-todo-id').value,
                 title: form.querySelector('#todo-title').value.trim(),
@@ -54,10 +55,11 @@ export  class Controller {
             this.view.dialog.close();
         });
 
-        form = forms.list_add;
+        const formlist = forms.list_add;
 
-        form.addEventListener('submit', (e) => {
+        formlist.addEventListener('submit', (e) => {
             e.preventDefault();
+            const form = formlist;
             const title = form.querySelector('#todo-title').value.trim();
             const list = this.app.addList({title});
 
