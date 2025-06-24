@@ -1,4 +1,26 @@
 export let tododata = [
+    {
+            title: 'Home',
+            desc: 'a description',
+            data: [
+                {
+                    title: "اشتري البوظة لسارة",
+                    desc: "اشتري بوظة لذيذة لسارة",
+                    due: new Date("2025-06-21"),
+                    done: false,
+                    priority: "high",
+                    icon: "🛒"
+                },
+                 {
+                    title: "اشتري لعبة خروف",
+                    desc: "اشتري لعبة خروف لسلمى",
+                    due: new Date("2025-06-21"),
+                    done: false,
+                    priority: "high",
+                    icon: "🛒"
+                }
+            ]
+        },
         {
             title: 'Projects',
             desc: 'a description',
