@@ -21,7 +21,7 @@ export default function(item) {
     const itemData = new ElementBuilder('div')
     .addClass('todo-summary-data')
     .build();
-    let date = format(new Date(item.due), "dd/MM/yyyy");
+    let date = format(new Date(item.due ? item.due : '11/11/1111' ), "dd/MM/yyyy");
     itemData.append(
         new ElementBuilder('h3')
             .setText(item.title)

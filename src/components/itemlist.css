@@ -23,3 +23,6 @@ ul.todo-list {
 .todo-list-header.expanded .todo-list-expand svg {
   transform: rotate(-90deg);
 }
+.todo-list .list-change-btns {
+    justify-content: center;
+}

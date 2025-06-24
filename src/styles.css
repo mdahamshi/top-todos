@@ -151,7 +151,7 @@ footer {
   padding: var(--sb-padding);
   margin-top: auto;
 }
-.nav-links button {
+.nav-links button:not(.sb-button) {
   background-color: transparent;
 }
 button:active , .clickable:active, .clickable svg:active {

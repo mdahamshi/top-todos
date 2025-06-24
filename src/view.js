@@ -1,10 +1,13 @@
 import  home from   './pages/home.js';
 import todoEditForm from './forms/todo-edit.js'
 import todoAddForm from './forms/todo-add.js'
+import listAddForm from './forms/list-add.js'
 import about from './pages/about.js';
 import {createDialogModal} from './components/DialogModal.js'
 import {sb_utils as sb} from "./sb-utils/utils.js";
 import { format } from 'date-fns'
+import Item from './components/item.js'
+import ItemList from './components/ItemList.js'
 
 
 
@@ -54,6 +57,7 @@ class View {
     initForms(){
         this.forms.todo_edit = todoEditForm();
         this.forms.todo_add = todoAddForm();
+        this.forms.list_add = listAddForm();
 
         this.dialog.content.appendChild(this.forms.todo_edit);
         this.replaceForm('todo_add');
@@ -80,6 +84,14 @@ class View {
             });
         });
 
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('button[data-action="add-list"]');
+            if(! btn) return;
+
+            this.addListForm();
+
+        });
+
 
 
         document.querySelector('.menu-toggle').addEventListener('click', () => {
@@ -104,6 +116,9 @@ class View {
             setTimeout(() => li.remove(), 300);
         }
     }
+    removeList(id){
+        this.getList(id).remove();
+    }
     editTodoItem(item){
         let formEl = this.forms.todo_edit;
         this.replaceForm('todo_edit');
@@ -113,6 +128,22 @@ class View {
         formEl.querySelector('#todo-priority').value = item.priority;
         formEl.querySelector('#todo-due').value = format(new Date(item.due), "yyyy-MM-dd");
         formEl.querySelector('#form-todo-id').value = item.id;
+    }
+    addTodoItemForm(id){
+        let formEl = this.forms.todo_add;
+        this.replaceForm('todo_add');
+        this.dialog.showModal();
+        formEl.querySelector('#form-todo-id').value = id;
+    }
+    addListForm(){
+        let formEl = this.forms.list_add;
+        this.replaceForm('list_add');
+        this.dialog.showModal();
+    }
+    addList(newlist){
+        const listgroup = document.querySelector('#content > .todo-list-group');
+        const list = new ItemList(newlist);
+        listgroup.insertBefore(list, listgroup.firstChild);
     }
     getForms(){
         return this.forms;
@@ -149,12 +180,24 @@ class View {
         setTimeout(() => li.classList.remove('updated'), 600);
     }
 
+    addItem(listID, newItem){
+        let list = this.getList(listID)
+        list.querySelector('.todo-list-body').prepend(new Item (newItem));
+    }
+
+
 
     getAllItems(){
         return document.querySelectorAll('li.todo-item');
     }
+    getAllLists(){
+        return document.querySelectorAll('ul.todo-list');
+    }
     getItem(id){
         return document.querySelector(`li.todo-item[id="${id}"]`);
+    }
+    getList(id){
+        return document.querySelector(`ul.todo-list[id="${id}"]`);
     }
 
 

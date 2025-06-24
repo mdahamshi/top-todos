@@ -36,6 +36,35 @@ export  class Controller {
             this.view.updateItem(updatedTodo);
             this.view.dialog.close();
         });
+
+        form = forms.todo_add;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newItem = {
+                listid: form.querySelector('#form-todo-id').value,
+                title: form.querySelector('#todo-title').value.trim(),
+                desc: form.querySelector('#todo-desc').value.trim(),
+                due: form.querySelector('#todo-due').value,
+                priority: form.querySelector('#todo-priority').value
+            };
+
+            const item = this.app.addItemByListID(newItem.listid, newItem);
+            this.view.addItem(newItem.listid, item);
+            this.view.dialog.close();
+        });
+
+        form = forms.list_add;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = form.querySelector('#todo-title').value.trim();
+            const list = this.app.addList({title});
+
+            this.view.addList(list);
+            this.view.dialog.close();
+        });
+
     }
     initEvents(){
 
@@ -65,6 +94,19 @@ export  class Controller {
                     }
         });
         });
+
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('button.btn-del-list');
+            if(! btn) return;
+            const id = btn.dataset.id;
+            this.app.removeList(id);
+            this.view.removeList(id);
+
+        });
+
+
+
+
     }
 
 }

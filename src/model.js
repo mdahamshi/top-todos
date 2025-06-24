@@ -43,7 +43,10 @@ export  class ToDoApp {
         });
         this.storage.saveData(this.data);
     }
-
+    removeList(id){
+        this.data = this.data.filter(list => list.id  !== id)
+        this.storage.saveData(this.data);
+    }
     toggleItemDone(id){
         this.getItemByID(id)
         .toggleState();
@@ -55,16 +58,23 @@ export  class ToDoApp {
     }
     getTodoList(title){
         return this.data.find(
-            list => list.title.toLowerCase() === title.toLowerCase()
+            list => {
+                return list.title.toLowerCase() === title.toLowerCase();
+        });
+    }
+    getTodoListByID(id){
+        return this.getTodoLists().find(
+            list => list.id === id
         );
     }
-
     addList({title, desc = '', data = [], icon = ''}){
+        console.log(title)
         if(this.listExist(title))
-            return;
-        let list = new TodoList(title, desc, data, icon);
+            return this.getTodoList(title);
+        let list = new TodoList({title, desc, data, icon});
         this.data.unshift(list);
         this.storage.saveData(this.data);
+        return list;
     }
     addItem(listTitle, item){
         const list = this.getTodoList(listTitle);
@@ -73,11 +83,19 @@ export  class ToDoApp {
         const todo = item instanceof Todo ? itemData : new Todo(item);
         list.addItem(todo);
         this.storage.saveData(this.data);
+        return todo;
+    }
+    addItemByListID(listid, item){
+        const todo = item instanceof Todo ? itemData : new Todo(item);
 
+        this.getTodoListByID(listid).addItem(todo);
+        this.storage.saveData(this.data);
+        return todo;
     }
     listExist(listTitle){
+
         let list = this.getTodoList(listTitle);
-        return list.length;
+        return list ? true : false;
     }
 
     clearStorage(){
