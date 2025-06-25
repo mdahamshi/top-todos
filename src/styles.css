@@ -61,13 +61,15 @@ html {
 .logo {
   width: 30px;
   gap: 2px;
+  object-fit: contain;
 }
 .logo img {
   position: relative;
   bottom: 1px;
 }
-nav.flex-row {
+nav {
   justify-content: space-between;
+  display: flex;
   padding: var(--sb-padding);
   border-bottom: 1px solid var(--sb-border-color-thin);
 }
@@ -209,6 +211,8 @@ button, a , .clickable, .clickable svg {
   width: 40px;
   border-radius: 50%;
   background-color: var(--lite-gray);
+  object-fit: cover;
+
 }
 
 .collapsible {

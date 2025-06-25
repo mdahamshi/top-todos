@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
+    <style>
+        nav {
+            justify-content: space-between;
+            display: flex;
+            padding: var(--sb-padding);
+            border-bottom: 1px solid var(--sb-border-color-thin);
+        }
+        #user-img {
+        width: 40px;
+        border-radius: 50%;
+        background-color: var(--lite-gray);
+        object-fit: cover;
+
+        }
+    </style>
 </head>
 <body>
 
      <header>
-        <nav class="flex-row">
+        <nav >
             <button class="flex-row clickable logo" data-action="home">
-                <img  id="nav-logo"   alt="SaraFood logo">
+                <img  id="nav-logo" width="30" height="30"  alt="SalmaTodo logo">
                 <h2 id="logo-name"></h2>
             </button>
 
@@ -23,7 +39,7 @@
                     <div class="user-menu flex-row">
                     </div>
                 </div>
-                <img id="user-img"  alt="avatart" class="sb-shadow">
+                <img id="user-img"  width="40" alt="avatart" class="sb-shadow">
                 <button class="menu-toggle" aria-label="Toggle menu">☰</button>
                 
 
