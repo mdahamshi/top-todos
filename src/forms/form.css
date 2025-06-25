@@ -1,27 +1,26 @@
-
 form.flex-col {
-    gap: 8px;
+  gap: 8px;
 }
 form h2 {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
-form  input, form select  {
-    background-color: #FFFFFF;
-    border: 1px solid var(--lite-gray);
-    border-radius: 3px;
-    width: 100%;
-    padding: 5px;
-    font-size: 14px;
-    outline: none;
-    margin-bottom: 24px;
+form input,
+form select {
+  background-color: #ffffff;
+  border: 1px solid var(--lite-gray);
+  border-radius: 3px;
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 24px;
 }
 form input:invalid {
-    border: 1px solid #D55C5F;
-    color: #D55C5F;
-    box-shadow: none;
+  border: 1px solid #d55c5f;
+  color: #d55c5f;
+  box-shadow: none;
 }
-form input:focus  {
-    border: 1px solid var(--sb-theme-color);
-    box-shadow: 0 0 5px var(--sb-theme-color);
+form input:focus {
+  border: 1px solid var(--sb-theme-color);
+  box-shadow: 0 0 5px var(--sb-theme-color);
 }
-

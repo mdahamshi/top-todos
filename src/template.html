@@ -1,62 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Document</title>
     <style>
-        nav {
-            justify-content: space-between;
-            display: flex;
-            padding: var(--sb-padding);
-            border-bottom: 1px solid var(--sb-border-color-thin);
-        }
-        #user-img {
+      nav {
+        justify-content: space-between;
+        display: flex;
+        padding: var(--sb-padding);
+        border-bottom: 1px solid var(--sb-border-color-thin);
+      }
+      #user-img {
         width: 40px;
         border-radius: 50%;
         background-color: var(--lite-gray);
         object-fit: cover;
-
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="flex-row clickable logo" data-action="home">
+          <img id="nav-logo" width="30" height="30" alt="SalmaTodo logo" />
+          <h2 id="logo-name"></h2>
+        </button>
 
-     <header>
-        <nav >
-            <button class="flex-row clickable logo" data-action="home">
-                <img  id="nav-logo" width="30" height="30"  alt="SalmaTodo logo">
-                <h2 id="logo-name"></h2>
-            </button>
-
-            <div class="flex-row">
-
-    
-                <div class="flex-row nav-links">
-    
-                    <button class="sb-button" data-action="add-list">Add List</button>
-                    <div class="user-menu flex-row">
-                    </div>
-                </div>
-                <img id="user-img"  width="40" alt="avatart" class="sb-shadow">
-                <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-                
-
-            </div>
-        </nav>
+        <div class="flex-row">
+          <div class="flex-row nav-links">
+            <button class="sb-button" data-action="add-list">Add List</button>
+            <div class="user-menu flex-row"></div>
+          </div>
+          <img id="user-img" width="40" alt="avatart" class="sb-shadow" />
+          <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+      </nav>
     </header>
 
-            
-        <div id="content" class="flex-col">
-    
-    
-        </div>
-        
-        <footer class="flex-col">
-    
-        </footer>
+    <div id="content" class="flex-col"></div>
 
-    
-</body>
+    <footer class="flex-col"></footer>
+  </body>
 </html>

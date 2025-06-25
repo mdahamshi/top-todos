@@ -1,18 +1,18 @@
 .dialog-close {
-    align-self: flex-end;    
-    padding: 10px;
-    position: absolute;
-    margin: 16px;
-    top: 0;
-    right: 0;
+  align-self: flex-end;
+  padding: 10px;
+  position: absolute;
+  margin: 16px;
+  top: 0;
+  right: 0;
 }
 
-.dialog-modal{
-    margin: auto;
-    width: 100%;
-    padding: 32px 20px;
-    border-radius: 6px;
-    border: none;
+.dialog-modal {
+  margin: auto;
+  width: 100%;
+  padding: 32px 20px;
+  border-radius: 6px;
+  border: none;
 }
 
 ::backdrop {
@@ -21,8 +21,7 @@
 }
 
 @media only screen and (min-width: 700px) {
-    .dialog-modal {
-        max-width: 400px;
-    }
-
+  .dialog-modal {
+    max-width: 400px;
+  }
 }

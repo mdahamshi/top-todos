@@ -1,20 +1,19 @@
 ul.todo-list :last-child {
-
-    border: none;
+  border: none;
 }
 ul.todo-list {
-    display: flex;
-    flex-direction: column;
-    padding: 16px 8px;
-    padding-right: 16px;
-    border-left: 8px solid var(--sb-theme-color);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 8px;
+  padding-right: 16px;
+  border-left: 8px solid var(--sb-theme-color);
 
-    /* gap: 16px; */
+  /* gap: 16px; */
 }
 .todo-list-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .todo-list-header .todo-list-expand svg {
   transition: transform 0.3s ease;
@@ -24,5 +23,5 @@ ul.todo-list {
   transform: rotate(-90deg);
 }
 .todo-list .list-change-btns {
-    justify-content: center;
+  justify-content: center;
 }

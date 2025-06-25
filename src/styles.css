@@ -2,36 +2,61 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    border-radius: var(--sb-corner-radius);
-
-
+  font-family:
+    sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  border-radius: var(--sb-corner-radius);
 }
 :root {
-    --lite-gray: #f0f1f4;
-    --label-width: 120px;
-    --sb-theme-color: #3080e8;
-    --sb-conent-bg: #fcf9f8;
-    --sb-corner-radius: 12px;
-    --sb-padding: 16px;
-    --sb-border-color-thin: #f0f1f4;
+  --lite-gray: #f0f1f4;
+  --label-width: 120px;
+  --sb-theme-color: #3080e8;
+  --sb-conent-bg: #fcf9f8;
+  --sb-corner-radius: 12px;
+  --sb-padding: 16px;
+  --sb-border-color-thin: #f0f1f4;
 }
-.sb-animate , #content { 
-    animation-duration: 0.5s;
-    animation-name: animate-fade;
-    animation-delay: 0.5s;
-    animation-fill-mode: backwards;
+.sb-animate,
+#content {
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
 }
 @keyframes animate-fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   font-size: 16px;
-    background-color: var(--sb-conent-bg);
-  
+  background-color: var(--sb-conent-bg);
 }
 .hidden {
   display: none !important;
@@ -45,18 +70,18 @@ html {
   list-style-type: none;
 }
 .sb-shadow {
-   box-shadow: 4px 4px 4px rgba(72,73,121,0.15) !important;
-   z-index: 2;
+  box-shadow: 4px 4px 4px rgba(72, 73, 121, 0.15) !important;
+  z-index: 2;
 }
 .flex-row {
-    display: flex;
-    gap: 25px;
-    align-items: center;
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 .flex-col {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 .logo {
   width: 30px;
@@ -74,13 +99,14 @@ nav {
   border-bottom: 1px solid var(--sb-border-color-thin);
 }
 button:hover {
-    filter: brightness(1.1);
-    cursor: pointer;
-    transform: scale(1.03);
-    transition: all 0.3s ease;
+  filter: brightness(1.1);
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all 0.3s ease;
 }
-button:focus-visible, button:focus {
-    outline: none;
+button:focus-visible,
+button:focus {
+  outline: none;
 }
 button {
   cursor: pointer;
@@ -99,7 +125,6 @@ header nav button {
   font-size: 16px;
   border: none;
   background-color: white;
-
 }
 header {
   background-color: white;
@@ -111,19 +136,18 @@ body {
   flex-direction: column;
   min-height: 100dvh;
   background-color: var(--lite-gray);
-
 }
 ul.todo-list {
-    background-color: white;
+  background-color: white;
 }
 #content {
-    display: grid;
-    list-style-type: none;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    overflow-y: auto;
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .hero-section {
@@ -138,7 +162,6 @@ ul.todo-list {
   color: white;
   justify-content: center;
   gap: 50px;
-
 }
 .hero-section p {
   background-color: rgba(0, 0, 0, 0.562);
@@ -146,7 +169,6 @@ ul.todo-list {
 }
 .menu-item-action {
   justify-content: space-between;
-
 }
 
 footer {
@@ -156,25 +178,29 @@ footer {
 .nav-links button:not(.sb-button) {
   background-color: transparent;
 }
-button:active , .clickable:active, .clickable svg:active {
+button:active,
+.clickable:active,
+.clickable svg:active {
   filter: brightness(0.9);
-    transform: scale(0.98);
-
+  transform: scale(0.98);
 }
-button, a , .clickable, .clickable svg {
+button,
+a,
+.clickable,
+.clickable svg {
   -webkit-tap-highlight-color: transparent;
   transition: filter 0.15s ease;
   outline: none;
   touch-action: manipulation; /* prevents 300ms delay on older browsers */
 }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-  }
-  .nav-links.active {
-    display: flex;
-  }
+.nav-links {
+  display: none;
+  flex-direction: column;
+}
+.nav-links.active {
+  display: flex;
+}
 @media only screen and (min-width: 700px) {
   #content {
     max-width: 980px;
@@ -183,7 +209,6 @@ button, a , .clickable, .clickable svg {
   }
   .hero-section {
     height: 500px;
-
   }
   .menu-toggle {
     display: none;
@@ -191,20 +216,18 @@ button, a , .clickable, .clickable svg {
   .nav-links {
     display: flex;
     flex-direction: row;
-
   }
 }
 
-
 .button-icon {
-    width: 25px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    fill: var(--sb-theme-color);
+  width: 25px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  fill: var(--sb-theme-color);
 }
 .button-icon:hover {
-    fill: var(--sb-theme-color);
+  fill: var(--sb-theme-color);
 }
 
 #user-img {
@@ -212,14 +235,15 @@ button, a , .clickable, .clickable svg {
   border-radius: 50%;
   background-color: var(--lite-gray);
   object-fit: cover;
-
 }
 
 .collapsible {
   overflow: hidden;
   max-height: 1000px; /* or a very large value */
   opacity: 1;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .collapsible.collapsed {
@@ -233,6 +257,6 @@ button, a , .clickable, .clickable svg {
 }
 
 .fade-out {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }

@@ -29,7 +29,9 @@ export class ElementBuilder {
   }
 
   append(child) {
-    this.el.appendChild(child instanceof ElementBuilder ? child.build() : child);
+    this.el.appendChild(
+      child instanceof ElementBuilder ? child.build() : child,
+    );
     return this;
   }
 
@@ -38,20 +40,25 @@ export class ElementBuilder {
   }
 }
 
+export function labelAndInput({
+  labelText,
+  inputType,
+  id,
+  name,
+  required = false,
+}) {
+  const label = new ElementBuilder("label")
+    .setAttr("for", id)
+    .setText(labelText);
 
-export function labelAndInput({ labelText, inputType, id, name, required = false }) {
-    const label = new ElementBuilder('label')
-      .setAttr('for', id)
-      .setText(labelText);
+  const input = new ElementBuilder("input")
+    .setAttr("type", inputType)
+    .setAttr("id", id)
+    .setAttr("name", name);
 
-    const input = new ElementBuilder('input')
-      .setAttr('type', inputType)
-      .setAttr('id', id)
-      .setAttr('name', name);
+  if (required) {
+    input.setAttr("required", "");
+  }
 
-    if (required) {
-      input.setAttr('required', '');
-    }
-
-    return [label, input];
+  return [label, input];
 }
