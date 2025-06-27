@@ -42,11 +42,11 @@ export class Controller {
       e.preventDefault();
       const form = formadd;
       const newItem = {
-        listid: form.querySelector("#form-todo-id").value,
-        title: form.querySelector("#todo-title").value.trim(),
-        desc: form.querySelector("#todo-desc").value.trim(),
-        due: form.querySelector("#todo-due").value,
-        priority: form.querySelector("#todo-priority").value,
+        listid: form.elements["form-todo-id"].value,
+        title: form.elements['todo-title'].value.trim(),
+        desc: form.elements["todo-desc"].value.trim(),
+        due: form.elements["todo-due"].value,
+        priority: form.elements["todo-priority"].value,
       };
 
       const item = this.app.addItemByListID(newItem.listid, newItem);
